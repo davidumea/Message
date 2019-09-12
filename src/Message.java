@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Date;
 
 public class Message {
@@ -40,10 +41,23 @@ public class Message {
 
     @Override
     public String toString() {
-        return "";
+        return "Message{" +
+                "createdAt=" + createdAt +
+                ", updatedAt=" + updatedAt +
+                ", message='" + message + '\'' +
+                ", author='" + author + '\'' +
+                '}';
     }
 
-    /*public void update(String) {
 
-    }*/
+    public void update(String updateMessage) {
+
+    }
+
+    public Message(String message) {
+        this.message = message;
+        this.author = System.getProperty("user.name");
+        this.createdAt = new Date();
+        this.updatedAt = new Date();
+    }
 }
